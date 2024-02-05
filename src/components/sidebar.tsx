@@ -31,17 +31,20 @@ const LinkItem = ({
 
 export default function Sidebar() {
   return (
-    <div className="flex flex-col w-[250px] gap-6">
-      <Image
-        className="mx-2"
-        alt="Logo"
-        src={"/favicon.ico"}
-        width={60}
-        height={60}
-      />
-      <LinkItem href="/" text="Home" />
-      <LinkItem href="/about" text="About" />
-      <LinkItem href="/blog" text="Blog" />
+    <div className="hidden lg:block">
+      <div className="flex flex-col w-[220px] gap-6">
+        <Image
+          className="mx-2"
+          alt="Logo"
+          src={"/favicon.ico"}
+          width={60}
+          height={60}
+        />
+        <LinkItem href="/" text="Home" />
+        <LinkItem href="/about" text="About" />
+        <LinkItem href="/work" text="Work" />
+        <LinkItem href="/gallery" text="Gallery" />
+      </div>
     </div>
   );
 }
