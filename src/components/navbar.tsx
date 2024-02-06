@@ -1,24 +1,21 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 const LinkItem = ({
   href,
   text,
-//   isActive = false,
-}: {
+}: 
+{
   href: string;
   text: string;
-//   isActive?: boolean;
 }) => {
   const pathName = usePathname();
   return (
     <div>
       <Link
         className={clsx(
-          "px-4 py-2 text-zinc-900 hover:bg-zinc-300 rounded font-bold",
+          "px-4 py-2 text-zinc-900 hover:bg-zinc-300 rounded font-bold m-1",
           pathName == href && "bg-zinc-200"
         )}
         href={href}
@@ -29,22 +26,15 @@ const LinkItem = ({
   );
 };
 
-export default function Sidebar() {
+export default function Navbar() {
   return (
-    <div className="hidden lg:block">
-      <div className="flex flex-col w-[220px] gap-6">
-        <Image
-          className="mx-2"
-          alt="Logo"
-          src={"/favicon.ico"}
-          width={60}
-          height={60}
-        />
+    <nav className="py-4 lg:hidden">
+      <div className="container mx-auto flex justify-center">
         <LinkItem href="/" text="Home" />
         <LinkItem href="/about" text="About" />
         <LinkItem href="/work" text="Work" />
         <LinkItem href="/gallery" text="Gallery" />
       </div>
-    </div>
+    </nav>
   );
 }
